@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Niche Generator</title>
+    <meta name="description" content="Generate specific Roblox image prompts and video content plans easily.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="logo-text">ROBLOX <span>GEN</span></h1>
+            <p class="subtitle">AI Prompt & Content Plan Generator</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Stepper Container -->
+            <section class="generator-section">
+                
+                <!-- Step 1: Character -->
+                <div class="step-card active" id="step-1">
+                    <div class="step-header">
+                        <span class="step-number">01</span>
+                        <h2>Character & Avatar</h2>
+                    </div>
+                    <p class="step-desc">Who is the main focus of your content?</p>
+                    
+                    <div class="options-grid" id="avatar-options">
+                        <button class="option-btn" data-type="avatar" data-value="Bacon Hair">Bacon Hair</button>
+                        <button class="option-btn" data-type="avatar" data-value="Slender">Slender</button>
+                        <button class="option-btn" data-type="avatar" data-value="Ro-Gangster">Ro-Gangster</button>
+                        <button class="option-btn" data-type="avatar" data-value="Softie/Preppy">Softie/Preppy</button>
+                        <button class="option-btn" data-type="avatar" data-value="Classic Noob">Classic Noob</button>
+                        <button class="option-btn" data-type="avatar" data-value="Military/Tactical">Military</button>
+                        <button class="option-btn" data-type="avatar" data-value="Anime Cosplayer">Anime Style</button>
+                    </div>
+
+                    <h3 class="sub-heading">Action/Pose</h3>
+                    <div class="options-grid" id="action-options">
+                        <button class="option-btn" data-type="action" data-value="running away in panic">Running Away</button>
+                        <button class="option-btn" data-type="action" data-value="fighting a massive boss">Fighting Boss</button>
+                        <button class="option-btn" data-type="action" data-value="trading a rare glowing item">Trading Item</button>
+                        <button class="option-btn" data-type="action" data-value="doing a viral dance emote">Emoting</button>
+                        <button class="option-btn" data-type="action" data-value="hiding fearfully behind a wall">Hiding</button>
+                    </div>
+
+                    <div class="step-actions">
+                        <button class="action-btn next-btn" onclick="nextStep(2)">Next Step <span class="arrow">→</span></button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Environment -->
+                <div class="step-card" id="step-2">
+                    <div class="step-header">
+                        <span class="step-number">02</span>
+                        <h2>Environment & Genre</h2>
+                    </div>
+                    <p class="step-desc">Where does this take place?</p>
+                    
+                    <div class="options-grid" id="genre-options">
+                        <button class="option-btn" data-type="genre" data-value="a neon-lit impossibly hard Obby parkour course">Neon Obby</button>
+                        <button class="option-btn" data-type="genre" data-value="a colorful and grindy pet simulator world">Pet Simulator</button>
+                        <button class="option-btn" data-type="genre" data-value="a dark and terrifying Piggy-style horror maze">Horror Maze</button>
+                        <button class="option-btn" data-type="genre" data-value="a bustling Brookhaven style city roleplay street">City Roleplay</button>
+                        <button class="option-btn" data-type="genre" data-value="a highly destructible chaotic battlegrounds arena">Battlegrounds</button>
+                    </div>
+
+                    <h3 class="sub-heading">Key Props / Elements</h3>
+                    <div class="options-grid" id="prop-options">
+                        <button class="option-btn" data-type="prop" data-value="a Bloxy Cola">Bloxy Cola</button>
+                        <button class="option-btn" data-type="prop" data-value="a rich Dominus hat">Dominus Hat</button>
+                        <button class="option-btn" data-type="prop" data-value="a glowing neon sword">Neon Sword</button>
+                        <button class="option-btn" data-type="prop" data-value="a blue gravity coil">Gravity Coil</button>
+                        <button class="option-btn" data-type="prop" data-value="floating green Robux symbols">Robux</button>
+                    </div>
+
+                    <div class="step-actions">
+                        <button class="action-btn back-btn" onclick="prevStep(1)"><span class="arrow">←</span> Back</button>
+                        <button class="action-btn next-btn" onclick="nextStep(3)">Next Step <span class="arrow">→</span></button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Visuals -->
+                <div class="step-card" id="step-3">
+                    <div class="step-header">
+                        <span class="step-number">03</span>
+                        <h2>Visual Style</h2>
+                    </div>
+                    <p class="step-desc">How should the final image look?</p>
+                    
+                    <div class="options-grid" id="style-options">
+                        <button class="option-btn" data-type="style" data-value="highly detailed Roblox GFX style, rendered in Blender">Roblox GFX (Blender)</button>
+                        <button class="option-btn" data-type="style" data-value="cinematic lighting, moody atmosphere">Cinematic Lighting</button>
+                        <button class="option-btn" data-type="style" data-value="classic 2012 Low-Poly Roblox aesthetic">Classic Low-Poly</button>
+                        <button class="option-btn" data-type="style" data-value="hyper-realistic with RTX ON, unbelievable graphics">Hyper-Realistic RTX</button>
+                    </div>
+
+                    <h3 class="sub-heading">Camera Angle</h3>
+                    <div class="options-grid" id="camera-options">
+                        <button class="option-btn" data-type="camera" data-value="dynamic low angle action shot">Action Shot</button>
+                        <button class="option-btn" data-type="camera" data-value="first-person pov view">First-Person (POV)</button>
+                        <button class="option-btn" data-type="camera" data-value="isometric top-down tycoon view">Isometric Tycoon</button>
+                        <button class="option-btn" data-type="camera" data-value="close-up emotional portrait">Close-up Portrait</button>
+                    </div>
+
+                    <div class="step-actions">
+                        <button class="action-btn back-btn" onclick="prevStep(2)"><span class="arrow">←</span> Back</button>
+                        <button class="action-btn generate-btn" onclick="generateContent()">Generate Magic ⚡</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Output Section -->
+            <section class="output-section hidden" id="output-section">
+                <div class="result-card">
+                    <div class="result-header">
+                        <h3>🎨 AI Image Prompt</h3>
+                        <button class="copy-btn" onclick="copyText('image-prompt-text')">Copy</button>
+                    </div>
+                    <div class="result-content" id="image-prompt-text">
+                        <!-- Prompt goes here -->
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-header">
+                        <h3>🎬 Video Content Plan (TikTok/Shorts)</h3>
+                        <button class="copy-btn" onclick="copyText('video-plan-text')">Copy</button>
+                    </div>
+                    <div class="result-content" id="video-plan-text">
+                        <!-- Storyboard goes here -->
+                    </div>
+                </div>
+
+                <div class="step-actions restart-actions">
+                    <button class="action-btn reset-btn" onclick="resetGenerator()">Start Over 🔄</button>
+                </div>
+            </section>
+
+        </main>
+        
+        <footer>
+            <p>Generated for Roblox Creators</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
